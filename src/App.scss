@@ -2,10 +2,16 @@
   font-family: PingFangSC-Regular, PingFang SC;
 
   .title {
-    font-size: 28px;
-    color: #fff;
+
     text-align: center;
     margin: 80px 0 50px;
+
+    .btn {
+      font-size: 28px;
+      color: #fff;
+      display: inline-block;
+      cursor: pointer;
+    }
   }
 
   >.person {
@@ -45,11 +51,17 @@
       }
 
       >.des {
-        margin-top: 50px;
+        max-width: 800px;
+        margin: 50px auto 0;
         color: #fff;
         text-align: center;
         font-size: 16px;
         letter-spacing: 2px;
+        line-height: 30px;
+
+        span {
+          animation: glow-in 0.8s both;
+        }
       }
 
       >.des2 {
@@ -265,5 +277,24 @@
         }
       }
     }
+  }
+}
+
+@keyframes glow-in {
+  from {
+    opacity: 0;
+  }
+
+  65% {
+    opacity: 1;
+    text-shadow: 0 0 25px white;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 1;
   }
 }

@@ -7,43 +7,39 @@ function Work(props) {
     <div className="work-item" key={item.time}>
       <div className="left">
         <img src={item.img} alt="" />
-      </div>
+      </div>{' '}
       <div className="right">
-        <p>公司：{item.company}</p>
-        <p>时间：{item.time}</p>
-        <p>岗位：{item.position}</p>
-        <p>职责：{item.content}</p>
-      </div>
+        <p> 公司： {item.company} </p> <p> 时间： {item.time} </p> <p> 岗位： {item.position} </p> <p> 职责： {item.content} </p>{' '}
+      </div>{' '}
     </div>
   ));
   return listItems;
 }
+
 function ProjectsLeft(props) {
   const listItems = props.list.map(item => (
     <div className="project-item" key={item.name}>
       <img className="project-img" src={item.img} alt="" />
       <div className="content">
-        <p className="name">{item.name}</p>
-        <p className="link">{item.link}</p>
-        <p className="des">{item.des}</p>
-      </div>
+        <p className="name"> {item.name} </p> <p className="link"> {item.link} </p> <p className="des"> {item.des} </p>{' '}
+      </div>{' '}
     </div>
   ));
   return listItems;
 }
+
 function ProjectsRight(props) {
   const listItems = props.list.map(item => (
     <div className="project-item" key={item.name}>
       <img className="project-img" src={item.img} alt="" />
       <div className="content">
-        <p className="name">{item.name}</p>
-        <p className="link">{item.link}</p>
-        <p className="des">{item.des}</p>
-      </div>
+        <p className="name"> {item.name} </p> <p className="link"> {item.link} </p> <p className="des"> {item.des} </p>{' '}
+      </div>{' '}
     </div>
   ));
   return listItems;
 }
+
 function CanvasBg(props) {
   var c = document.getElementById('canvas');
   var w = (c.width = window.innerWidth),
@@ -98,6 +94,7 @@ function CanvasBg(props) {
       line.step();
     });
   }
+
   function Line() {
     this.reset();
   }
@@ -170,62 +167,80 @@ function CanvasBg(props) {
     dieY = h / 2 / opts.len;
   });
 }
+
 function Title(props) {
-  return <p className="title">{props.title.toUpperCase()}</p>;
+  return (
+    <p className="title">
+      {' '}
+      <span className="btn btn-primary btn-ghost btn-shine">{props.title.toUpperCase()}</span>{' '}
+    </p>
+  );
 }
 class App extends React.Component {
   componentDidMount() {
     CanvasBg();
+    let glowInTexts = document.querySelectorAll('.glowIn');
+    glowInTexts.forEach(glowInText => {
+      let letters = glowInText.textContent.split('');
+      glowInText.textContent = '';
+      letters.forEach((letter, i) => {
+        let span = document.createElement('span');
+        span.textContent = letter;
+        span.style.animationDelay = `${i * 0.05}s`;
+        glowInText.append(span);
+      });
+    });
   }
   render() {
     return (
       <div className="App">
         <div className="person">
-          <canvas id="canvas"></canvas>
+          <canvas id="canvas"> </canvas>{' '}
           <div className="content">
             <div className="icon-div">
               <img className="icon" src={require('./img/my.jpg')} alt="" />
-            </div>
-            <div className="des">{skill1}</div>
-            <div className="des2">{skill2}</div>
-          </div>
-        </div>
+            </div>{' '}
+            <div className="des glowIn">
+              {' '}
+              {skill1}
+              {skill2}{' '}
+            </div>{' '}
+          </div>{' '}
+        </div>{' '}
         <Title title="EDUCATION" />
         <div className="education">
           <div className="left">
             <img src={require('./img/timg.jpeg')} alt="" />
-          </div>
+          </div>{' '}
           <div className="right">
-            <p>院校：{education.university}</p>
-            <p>学历：{education.level}</p>
-            <p>时间：{education.time}</p>
-            <p>专业：{education.major}</p>
-          </div>
-        </div>
+            <p> 院校： {education.university} </p> <p> 学历： {education.level} </p> <p> 时间： {education.time} </p>{' '}
+            <p> 专业： {education.major} </p>{' '}
+          </div>{' '}
+        </div>{' '}
         <Title title="work Experience" />
         <div className="workExperience">
-          <Work list={workExperience} />
-        </div>
+          <Work list={workExperience} />{' '}
+        </div>{' '}
         <Title title="Project Experience" />
         <div className="projectExperience">
           <div className="projectExperience-left projectExperience-public">
-            <ProjectsLeft list={projectExperience.left}></ProjectsLeft>
-          </div>
+            <ProjectsLeft list={projectExperience.left}> </ProjectsLeft>{' '}
+          </div>{' '}
           <div className="projectExperience-right projectExperience-public">
-            <ProjectsRight list={projectExperience.right}></ProjectsRight>
-          </div>
-        </div>
-        {/* <div className="interesting"></div> */}
+            <ProjectsRight list={projectExperience.right}> </ProjectsRight>{' '}
+          </div>{' '}
+        </div>{' '}
+        {/* <div className="interesting"></div> */}{' '}
         <div className="footer">
           <p>
             <img src={require('./img/phone.svg')} alt="" />
-            <span>: 17521020251</span>
-          </p>
+            <span>: 17521020251 </span>{' '}
+          </p>{' '}
           <p>
             <img src={require('./img/wx.svg')} alt="" />
-            <span>: Adoration-Z</span>
-          </p>
-        </div>
+            <span>: Adoration - Z </span>{' '}
+          </p>{' '}
+        </div>{' '}
       </div>
     );
   }

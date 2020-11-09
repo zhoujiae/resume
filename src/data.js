@@ -4,7 +4,7 @@ const education = {
   university: '郑州工商学院',
   major: '电子信息工程'
 };
-const skill1 = '我是一名前端工程师，别名程序猿。今年25岁，从事了三年的web端，移动端，微信公众号小程序开发';
+const skill1 = '我是一名前端工程师，别名程序猿。今年25岁，从事了三年的web端，移动端，微信公众号小程序开发。';
 const skill2 = '爱生活，爱健身，码的了程序，下的了厨房，身体和灵魂至少要有一个在路上！'
 const workExperience = [{
     time: '2017年6月-2017年11月',
