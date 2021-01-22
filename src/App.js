@@ -220,6 +220,14 @@ class App extends React.Component {
         <Title title="work Experience" />
         <div className="workExperience">
           <Work list={workExperience} />{' '}
+          <div className="ball-left">
+            <div className="ball-half"></div>
+            <div className="ball"></div>
+          </div>
+          <div className="ball-right">
+            <div className="ball"></div>
+            <div className="ball-half"></div>
+          </div>
         </div>{' '}
         <Title title="Project Experience" />
         <div className="projectExperience">
