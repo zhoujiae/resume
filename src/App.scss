@@ -2,13 +2,12 @@
   font-family: PingFangSC-Regular, PingFang SC;
 
   .title {
-
     text-align: center;
     margin: 80px 0 50px;
 
     .btn {
       font-size: 28px;
-      color: #fff;
+      color: #000;
       display: inline-block;
       cursor: pointer;
     }
@@ -157,10 +156,9 @@
       .ball-half {
         position: relative;
         animation: ball-half-jump 4s ease-in-out infinite alternate;
-        left: -120px;
-        width: 200px;
+        width: 100px;
         height: 200px;
-        border-radius: 200px;
+        border-radius: 0 200px 200px 0;
         background: radial-gradient(circle at 80% 100%, rgb(90, 17, 168) 30%, cyan);
       }
       .ball {
@@ -180,16 +178,14 @@
       .ball-half {
         position: relative;
         animation: ball-half-jump 4s ease-in-out infinite alternate;
-        right: -80px;
-        width: 150px;
+        width: 75px;
         height: 150px;
-        border-radius: 150px;
+        border-radius: 150px 0 0 150px;
         background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
       }
       .ball {
         position: relative;
         animation: ball-jump 5s ease-in-out infinite alternate;
-        right: -85px;
         width: 50px;
         height: 50px;
         border-radius: 50px;
